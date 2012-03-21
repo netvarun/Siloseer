@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://siloseer_gui/skin/buttons.css" type="text/css" ?>
+<?xml-stylesheet href="chrome://siloseer_gui/skin/main.css" type="text/css" ?>
+<!DOCTYPE page SYSTEM "chrome://siloseer_gui/locale/overlay.dtd">
+
+<page id="siloseer_guiSidebar" title="SiloSeer GUI"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         onload="downloadWrappers();">
+         <!-- onload="display_user();downloadWrappers();"> -->
+         <script src="js/xul/User_Login.js"/>
+         <script src="js/ajax/ajax.js"/>
+<!--  <script src="js/xul/aes.js"/>  -->
+         <script src="js/utils/common.js"/>
+  <script src="js/firefox/Sidebar_Toggle.js"/>
+  <script src="js/xul/ff-sidebar.js"/>
+  <script src="js/utils/md5.js"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"  type="text/javascript"></script>
+
+
+<vbox width="150" height="200" align="center" pack="center"
+style="border:solid thin yellow">
+<html:p>
+<html:a href='' id="Create_New_Wrapper_button" onclick="display_Create_Domain_Sidebar(); return false;" class='button
+red' style="display:inline">Create New Wrapper</html:a>
+</html:p>
+
+<html:p>
+<html:a href='' id="Search_Wrapper_button" onclick="display_Search_Wrapper_Sidebar(); return false;" class='button
+red'>Search For Wrapper</html:a>
+</html:p>
+
+<html:p>
+<html:a href='' id="View_Domain_button" onclick="display_View_Domain_Sidebar(); return false;" class='button red'>View
+Wrappers</html:a>
+</html:p>
+</vbox>
+
+
+<vbox id="Create_Domain_Part1" hidden="false">
+<label id="Logged_User"></label>
+<html:a href='' id="Logout" onclick="logout_user(); return false;" class='button red'>Logout</html:a>
+<spacer style="height: 50px"/>
+<html:a href='' id="User Profile" onclick="gotoUserProfile(); return false;" class='button red'>User Profile</html:a>
+</vbox>
+
+
+</page>

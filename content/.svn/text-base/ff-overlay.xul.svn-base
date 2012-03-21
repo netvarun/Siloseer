@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://siloseer_gui/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://siloseer_gui/locale/overlay.dtd">
+<overlay id="siloseer_gui-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<!-- <script src="js/xul/ff-overlay.js"/> -->
+<!-- <script src="js/utils/aes.js"/> -->
+<script src="js/utils/common.js"/>
+<script src="js/algo/xpath.js"/>
+<script src="js/ajax/ajax.js"/>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"  type="text/javascript"></script> -->
+<script src="js/utils/jquery.min.js" />
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="siloseer_gui-strings" src="chrome://siloseer_gui/locale/overlay.properties"/>
+  </stringbundleset>
+  
+
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem key="key_openSidebar_siloseer_gui" observes="viewSidebar_User_Login" />
+  </menupopup>
+
+    <keyset id="mainKeyset">
+    <key id="key_openSidebar_siloseer_gui" modifiers="control,alt" key="x" command="viewSidebar_User_Login" />
+  </keyset>
+  <!-- oncommand="calc_xpath()" -->
+  <popup id="contentAreaContextMenu">
+    <menuitem id="SSShowXPather"
+	oncommand=""
+            label="SiloSeer GUI XPath"/>
+  </popup>
+  
+  
+  <broadcasterset id="mainBroadcasterSet">             
+                                    
+    <!-- Creation of users -->
+
+    <broadcaster id="viewSidebar_User_Login"
+                 label="Siloseer - User Login"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://siloseer_gui/content/User_Login.xul"
+                 sidebartitle="Siloseer GUI"
+                 oncommand="toggleSidebar('viewSidebar_User_Login',true);" />                                                      
+
+    <broadcaster id="viewSidebar_Create_User"
+                 label="Siloseer - Create User"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://siloseer_gui/content/Create_User.xul"
+                 sidebartitle="Siloseer GUI"
+                 oncommand="toggleSidebar('viewSidebar_Create_User',true);" />                                                      
+    <broadcaster id="viewSidebar_siloseer_gui"
+                 label="Siloseer GUI"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://siloseer_gui/content/ff-sidebar.xul"
+                 sidebartitle="Siloseer GUI"
+                 oncommand="toggleSidebar('viewSidebar_siloseer_gui',true);" />
+                 
+    <!--  Search or Create Wrapper -->
+    <broadcaster id="viewSidebar_Wrapper_Menu"
+                 label="Siloseer Wrapper Menu"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://siloseer_gui/content/Wrapper_Menu.xul"
+                 sidebartitle="Siloseer Wrapper Menu"
+                 oncommand="toggleSidebar('viewSidebar_Wrapper_Menu',true);" />       
+
+    <!--  Search Wrapper -->
+    <broadcaster id="viewSidebar_Search_Wrapper"
+                 label="Siloseer Search Wrapper"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://siloseer_gui/content/Search_Wrapper.xul"
+                 sidebartitle="Siloseer Search Wrapper"
+                 oncommand="toggleSidebar('viewSidebar_Search_Wrapper',true);" />       
+
+    <!-- Actual Creation -->
+    <broadcaster id="viewSidebar_Create_Domain"
+                 label="Siloseer Create Domain"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://siloseer_gui/content/Create_Domain.xul"
+                 sidebartitle="Siloseer Create Domain"
+                 oncommand="toggleSidebar('viewSidebar_Create_Domain',true);" />       
+                 
+    <broadcaster id="viewSidebar_View_Domain"
+                 label="Siloseer View Domain"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://siloseer_gui/content/View_Domain.xul"
+                 sidebartitle="Siloseer GUI"
+                 oncommand="toggleSidebar('viewSidebar_View_Domain',true);" />  
+                 
+    <broadcaster id="viewSidebar_View_Config"
+                 label="Siloseer - View Config"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://siloseer_gui/content/View_Config.xul"
+                 sidebartitle="Siloseer GUI"
+                 oncommand="toggleSidebar('viewSidebar_View_Config',true);" />         
+                 
+    <broadcaster id="viewSidebar_View_Crawl"
+                 label="Siloseer - Crawl"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://siloseer_gui/content/crawler.xul"
+                 sidebartitle="Siloseer GUI"
+                 oncommand="toggleSidebar('viewSidebar_View_Crawl',true);" />                                                      
+                 
+  </broadcasterset>
+    
+
+</overlay>

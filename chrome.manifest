@@ -1,0 +1,6 @@
+content   siloseer_gui                 chrome/content/
+skin      siloseer_gui   classic/1.0   chrome/skin/
+locale    siloseer_gui   en-US         chrome/locale/en-US/
+resource   siloseer_gui                 chrome/content/
+
+overlay   chrome://browser/content/browser.xul   chrome://siloseer_gui/content/ff-overlay.xul

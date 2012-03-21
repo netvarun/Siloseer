@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type"text/css" ?>
+<!DOCTYPE page SYSTEM "chrome://siloseer_gui/locale/overlay.dtd">
+
+<page id="siloseer_Search_Create_Wrapper" title="SiloSeer Search or Create Wrapper"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="js/firefox/Sidebar_Toggle.js"/>
+
+<vbox>
+  <button id="Create_New_Wrapper_button" label="Create New Wrapper" oncommand="display_Create_Domain_Sidebar();" disabled="false" />
+  <button id="Search_Wrapper_button" label="Search for Wrapper" oncommand="display_Search_Wrapper_Sidebar();" disabled="false" />
+  
+</vbox>
+
+
+<hbox id="View_Domain_End_Options" hidden="false">
+  <button id="View_Domain_Back_Button" label="Back" oncommand="display_View_Main_Sidebar();" disabled="false" />
+</hbox>
+</page>

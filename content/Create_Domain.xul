@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://siloseer_gui/skin/buttons.css" type="text/css" ?>
+<?xml-stylesheet href="chrome://siloseer_gui/skin/main.css" type="text/css" ?>
+<!DOCTYPE page SYSTEM "chrome://siloseer_gui/locale/overlay.dtd">
+
+<page id="siloseer_Create_Domain_Sidebar" title="SiloSeer Create Domain"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<!--  <script src="js/test/dynamicUpdate.js"/> -->
+  <script src="js/firefox/Sidebar_Toggle.js"/>
+  <script src="js/xul/Create_Domain.js"/>
+  <script src="js/ajax/ajax.js"/>
+<!--  <script src="js/utils/aes.js"/> -->
+  <script src="js/utils/common.js"/>
+<!--  <script src="js/utils/jqjson.js"/> -->
+<!--  <script src="js/utils/jquery.min.js"/> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"  type="text/javascript"></script>
+
+<vbox id="Create_Domain_Part1" hidden="false">
+
+<label>Create Wrapper</label>
+  <description>Name:</description>
+<textbox id="Domain_Name" flex="1"/>
+  <description>Domain URL:</description>
+<textbox id="Domain_Url" flex="1"/>
+
+<html:p>
+<html:a href='' id="Extract_Domain" onclick="getURL(); return false;" class='button red'>Extract</html:a>
+</html:p>
+
+<description>Description:</description>
+<textbox id="Domain_Description" multiline="true" flex="1"/>
+</vbox>
+
+<vbox id="Create_Domain_Part2" hidden="false">
+<label>Add Labels</label>
+</vbox>
+
+<spacer style="height: 10px"/>
+
+<vbox id="readroot" style="display: none">
+  <description>Label Name:</description>
+<textbox id="Label_Name" onclick="this.value=''" value="Label Name" flex="1"/>
+<description>Type:</description>
+<menulist id="Label_Type">
+  <menupopup id="Label_Type_Popup">
+    <menuitem label="Any Text" value="AnyText"/>
+    <menuitem label="Name/Title" value="Name"/>
+    <menuitem label="Description" value="Description"/>
+    <menuitem label="Story" value="Story"/>
+    <menuitem label="Phone Number" value="Phone"/>
+    <menuitem label="Address" value="Address"/>
+    <menuitem label="Price" value="Price"/>
+  </menupopup>
+</menulist>
+
+<button id="Remove_Node" label="Remove Label" oncommand="this.parentNode.parentNode.removeChild(this.parentNode);" disabled="false" />
+
+</vbox>
+
+<vbox id="writeroot"></vbox>
+
+  <spacer style="height: 20px"/>
+  
+<button id="Create_New_Label" label="Add New Label" oncommand="moreFields();" disabled="false" />
+
+<spacer style="height: 20px"/>
+
+<hbox id="Create_Domain_Options" hidden="false">
+  <button id="Create_Domain_Cancel_Button" label="Back" oncommand="display_View_Main_Sidebar();" disabled="false" />
+  <button id="Start_Config_Button" label="Done" oncommand="add_domain();" disabled="false" />
+</hbox>
+
+
+
+</page>

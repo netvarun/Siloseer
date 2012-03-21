@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type"text/css" ?>
+<!DOCTYPE page SYSTEM "chrome://siloseer_gui/locale/overlay.dtd">
+
+<page id="siloseer_View_Crawl_Sidebar" onload="beforeCrawl()" title="SiloSeer Crawler"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="js/firefox/Sidebar_Toggle.js"/>
+  <script src="js/xul/crawler.js" />
+  <script src="js/algo/xpath.js" />
+  <script src="js/algo/alignment.js" />
+  <script src="js/utils/file.js" /> <!-- file routines -->
+  <script src="js/utils/common.js" /> <!-- file routines -->
+  <!-- <description id="status"></description> --> <!-- not requiredly -->
+  
+<description id = "domain_name"></description>
+<description id = "domain_desc"></description>
+
+<hbox>
+  <button id="start_button" label="Start" oncommand="prepareCrawl();" disabled="false" />
+  <!-- <button label="Pause" /> -->
+  <!-- <button id="stop_button" label="Stop" oncommand="stopCrawl();"/> -->
+</hbox>
+
+<description>Current url is:</description>
+<description id="current_url" maxwidth="250"></description>
+<description id="cdd">URLs to Crawl:</description>
+<scale id="crawl_depth" min="5" max="15" />
+
+<description id="found_urls"></description>  <!-- found links altogether -->
+<description>Content links found:</description><description id="num_content_links_discov"></description>
+<description>Nav. links found:</description><description id="num_nav_links_discov"></description>
+
+<description>Next url is:</description>
+<description id="next_url" maxwidth="250"></description>
+<description>Target:</description>
+<description id="target_num_urls"></description>
+<description>Visited:</description>
+<description id="visited_urls"></description>
+<description>Urls in Queue:</description><description id="urlsinq"></description>
+
+
+<label id="crawlFile" value="Download Crawled Data" style="color: blue; cursor:hand"
+onmouseover="event.target.style.cursor='pointer'" onmouseout="event.target.style.cursor='default'" onclick="" hidden="true" />
+	
+<description id="found_urls"></description>		
+<hbox id="View_Domain_End_Options" hidden="false">
+  <button id="View_Domain_Back_Button" label="Back" oncommand="display_View_Main_Sidebar();" disabled="false" />
+</hbox>
+
+</page>

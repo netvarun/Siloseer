@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://siloseer_gui/skin/buttons.css" type="text/css" ?>
+<?xml-stylesheet href="chrome://siloseer_gui/skin/main.css" type="text/css" ?>
+<!DOCTYPE page SYSTEM "chrome://siloseer_gui/locale/overlay.dtd">
+
+<page id="siloseer_Create_User_Sidebar" title="SiloSeer Create User"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="js/firefox/Sidebar_Toggle.js"/>
+  <script src="js/xul/Create_User.js"/>
+<!--  <script src="siloseer_shared.js"/> -->
+  <script src="js/utils/common.js"/>
+  <script src="js/utils/md5.js"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"  type="text/javascript"></script>
+
+<vbox id="Create_User_Part1" hidden="false">
+<label>Create New Siloseer User Account</label>
+  <description>Name:</description>
+<textbox id="name" flex="1"/>
+  <description>Email:</description>
+<textbox id="email" flex="1"/>
+  <description>Username:</description>
+<textbox id="username" flex="1"/>
+  <description>Password:</description>
+<textbox id="password" type="password" maxlength="12" flex="1"/>
+</vbox>
+
+<vbox id="Create_User_Part2" hidden="false">
+<html:p>
+<html:a href='' id="Create_User" onclick="create_user(); return false;" class='button red'>Create</html:a>
+
+<spacer style="height: 10px"/>
+
+<html:a href='' id="Back" onclick="display_User_Login_Sidebar(); return false;" class='button red'>Back</html:a>
+
+
+</html:p>
+</vbox>
+
+</page>

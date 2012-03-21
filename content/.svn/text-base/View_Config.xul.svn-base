@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type"text/css" ?>
+<!--
+<?xml-stylesheet href="chrome://siloseer_gui/skin/buttons.css" type="text/css" ?>
+<?xml-stylesheet href="chrome://siloseer_gui/skin/main.css" type="text/css" ?>
+-->
+<!DOCTYPE page SYSTEM "chrome://siloseer_gui/locale/overlay.dtd">
+
+<page id="siloseer_View_Config_Sidebar" onload="get_link_vals();updateGUILists();" title="SiloSeer View Config"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="js/firefox/Sidebar_Toggle.js"/>
+  <script src="js/xul/View_Config.js"/>
+<!--   <script src="js/xul/ff-overlay.js"/> -->
+
+  <script src="js/algo/xpath.js"/>
+  <script src="js/algo/alignment.js"/>
+
+  <!-- auto code starts -->
+  <script src="js/algo/auto/auto.js"/>
+  <script src="js/algo/auto/dom.js"/>
+  <script src="js/algo/auto/server.js"/>
+  <script src="js/algo/auto/heuristics.js"/>
+  <!-- auto code starts -->
+
+  <script src="js/ajax/ajax.js"/>
+
+  <script src="js/ajax/ff-sidebar.js"/>
+  <script src="js/utils/common.js"/> <!-- For elementsbyid function -->
+  <script type="application/x-javascript" src="js/utils/jquery.min.js"></script>
+  
+  <!-- UX Code Starts -->
+  <script src="js/ux/aux.js"/>
+  <script src="js/ux/ui.js"/>
+  <script src="js/ux/data.js"/>
+  <script src="js/ux/urls.js"/>
+  <!-- UX Code Ends -->
+
+<vbox flex="1">
+
+<tabbox>
+  <tabs>
+    <tab label="Navigation"/>
+    <tab label="Content"/>
+  </tabs>
+  <tabpanels>
+  
+    <tabpanel id="View_Config_Navigation" orient="vertical">
+		<description>Tagged Navigation Pages</description>
+		<listbox id="taggedNavUrls" rows="3" onselect="gotoURL(this.selectedItem.label);">
+			
+		</listbox>
+		<description>Suggested Sites To Tag Navigation Links</description>
+		<listbox id="navList" rows="5" onselect="gotoURL(this.selectedItem.label);">
+			
+		</listbox>
+		<hbox id="content_links_box">
+		<description id="content_links" onclick="select_nav_type('content_links_box',0)">Content Links</description>
+		<description id="content_links_num">0</description>
+		</hbox>
+		<hbox id="nav_links_box">
+		<description id="navigation_links" onclick="select_nav_type('nav_links_box',1)">Navigation Links</description>
+		<description id="nav_links_num">0</description>
+		</hbox>
+    </tabpanel>
+    
+    <tabpanel id="View_Config_Content" orient="vertical">
+		<description id = "domain_name"></description>
+		
+		<description>Tagged Content Pages</description>
+		<listbox id="taggedConUrls" rows="3" onselect="gotoURL(this.selectedItem.label);">
+			
+		</listbox>
+		<description>Suggested Sites To Tag Content</description>
+		<listbox id="contentList" rows="5" onselect="gotoURL(this.selectedItem.label);">
+			
+		</listbox>
+		
+		<hbox id="readroot" style="display: none">
+		<description id="con_label" onclick=""></description>
+		<description id="con_label_type" onclick=""></description>
+		<description id="con_label_num">Tags: 0</description>
+        <button id="Remove_Label" label="X" oncommand="removeElement(this.parentNode.childNodes[0].textContent,this.parentNode.childNodes[1].textContent);" disabled="false" />
+        <!-- <button id="Remove_Label" label="X"
+        oncommand="removeElement(this.parentNode.childNodes[0].textContent,this.parentNode.childNodes[1].textContent);this.parentNode.parentNode.removeChild(this.parentNode);"
+        disabled="false" /> -->
+		<spacer style="height: 10px"/>
+        
+		</hbox>
+		
+
+
+  
+
+		<hbox id="writeroot"></hbox>		
+<button id="Create_New_Label" label="New Label" oncommand="displayBox();" disabled="false" />
+
+<vbox id="labelroot" style="display: none">
+  <description>Label Name:</description>
+<textbox id="Label_Name" onclick="this.value=''" value="Label Name" flex="1"/>
+<description>Type:</description>
+<menulist id="Label_Type">
+  <menupopup id="Label_Type_Popup">
+    <menuitem label="Any Text" value="AnyText"/>
+    <menuitem label="Name/Title" value="Name"/>
+    <menuitem label="Description" value="Description"/>
+    <menuitem label="Story" value="Story"/>
+    <menuitem label="Phone Number" value="Phone"/>
+    <menuitem label="Address" value="Address"/>
+    <menuitem label="Price" value="Price"/>
+  </menupopup>
+</menulist>
+
+  <button id="Add_New_Element" label="Add Label" oncommand="addElement();" disabled="false" />
+</vbox>
+
+    </tabpanel>
+<!--    
+    <tabpanel id="View_Config_Advanced" orient="vertical">
+		<description>Siloseer Advanced Mode</description>
+  <button id="Diagnose_Element" label="Diagnose Wrapper" oncommand="" disabled="false" />
+		<hbox id="advancedTe">
+           <textbox multiline="true" value="This is some text that could wrap onto multiple lines."/>  
+		</hbox>
+    </tabpanel>
+    -->
+    
+  </tabpanels>
+</tabbox>
+</vbox>
+  <button id="Clear_Wrapper" label="Clear" oncommand="clearWrapper(); return false;" disabled="false" />
+<hbox id="Create_Domain_Options" hidden="false">
+  <button id="Create_Domain_Cancel_Button" label="Done" oncommand="unLoadUITagging(); display_View_Main_Sidebar();" disabled="false" />
+  <button id="Auto_Config_Button" label="Suggest" oncommand="autoStart();" disabled="false" />
+</hbox>
+
+
+</page>

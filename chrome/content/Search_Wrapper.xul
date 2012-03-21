@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://siloseer_gui/skin/buttons.css" type="text/css" ?>
+<?xml-stylesheet href="chrome://siloseer_gui/skin/main.css" type="text/css" ?>
+<!DOCTYPE page SYSTEM "chrome://siloseer_gui/locale/overlay.dtd">
+
+<page id="siloseer_Create_Domain_Sidebar" title="SiloSeer Create Domain"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="js/firefox/Sidebar_Toggle.js"/>
+  <script src="js/ajax/ajax.js"/>
+  <script src="js/xul/Search_Domain.js"/>
+  <script src="siloseer_shared.js"/>
+  <script src="js/utils/common.js"/>
+  <script src="js/utils/md5.js"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"  type="text/javascript"></script>
+
+<vbox id="Create_Domain_Part1" hidden="false">
+<label>Search for Wrappers!</label>
+  <description>Domain URL:</description>
+<textbox id="Domain_Url" flex="1"/>
+</vbox>
+
+
+<html:p>
+<html:a href='' id="Search_Wrapper" onclick="search_domain(); return false;" class='button red'>Search</html:a>
+</html:p>
+
+<vbox id="Search_Results_Header" hidden="false">
+<label>Search Results</label>
+</vbox>
+
+<spacer style="height: 10px"/>
+
+<vbox id="Search_Results">
+<listbox id="SearchList"  onselect="gotoURL();">
+  <listhead>
+    <listheader label="Domain"/>
+    <listheader label="User"/>
+    <listheader label="Rating"/>
+  </listhead>
+  <listcols>
+    <listcol flex="1"/>
+    <listcol/>
+  </listcols>
+</listbox>
+
+
+</vbox>
+
+<html:p>
+<html:a href='' id="Search_Domain_Select_Button" onclick="selectFoundWrapper(); return false;" class='button red'>Select</html:a>
+</html:p>
+
+<html:p>
+<html:a href='' id="Back" onclick="display_User_Login_Sidebar(); return false;" class='button red'>Back</html:a>
+</html:p>
+
+</page>

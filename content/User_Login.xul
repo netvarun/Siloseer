@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- <?xml-stylesheet href="chrome://global/skin/" type"text/css" ?> -->
+<?xml-stylesheet href="chrome://siloseer_gui/skin/buttons.css" type="text/css" ?>
+<?xml-stylesheet href="chrome://siloseer_gui/skin/main.css" type="text/css" ?>
+<!DOCTYPE page SYSTEM "chrome://siloseer_gui/locale/overlay.dtd">
+
+<page id="siloseer_User_Login_Sidebar" title="SiloSeer User Login"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" onload="isLoggedIn();">
+  <script src="js/firefox/Sidebar_Toggle.js"/>
+  <!-- <script src="siloseer_shared.js"/> -->
+  <script src="js/xul/User_Login.js"/>
+  <script src="js/utils/common.js"/>
+  <script src="js/utils/md5.js"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"  type="text/javascript"></script>
+
+<vbox id="User_Login_Part1" hidden="false">
+<label>Login to Siloseer!</label>
+
+<image src="images/SiloseerTempLogo.jpg" width="100" height="200" /> 
+
+  <description>Username:</description>
+<textbox id="username" flex="1"/>
+  <description>Password:</description>
+<textbox id="password" type="password" maxlength="12" flex="1"/>
+</vbox>
+
+<vbox id="User_Login_Part2" hidden="false">
+<html:p>
+<html:a href='' id="Login_User" onclick="user_login(); return false;" class='button red'>Login</html:a>
+
+<spacer style="height: 10px"/>
+
+<html:a href='' id="New_User" onclick="display_Create_User_Sidebar(); return false;" class='button red'>New User</html:a>
+
+
+</html:p>
+
+</vbox>
+
+</page>

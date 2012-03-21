@@ -1,0 +1,29 @@
+
+window,
+page,
+dialog,
+wizard,
+prefwindow{
+  font-family: arial, "lucida console", sans-serif;
+  background-image:url('images/siloseerBackground.jpg');
+}
+
+description {
+  padding: 5px;
+  color: blue;
+}
+
+#toppanel {
+  padding: 5px;
+}
+
+#contentview {
+  padding: 5px;
+  border: thin solid black;
+}
+
+.count {
+  width: 5em;
+}
+
+    

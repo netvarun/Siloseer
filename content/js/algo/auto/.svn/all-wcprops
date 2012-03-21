@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/siloseer/!svn/ver/33/content/js/algo/auto
+END
+server.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/siloseer/!svn/ver/33/content/js/algo/auto/server.js
+END
+auto.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/siloseer/!svn/ver/33/content/js/algo/auto/auto.js
+END
+domOld.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/siloseer/!svn/ver/33/content/js/algo/auto/domOld.js
+END
+dom.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/siloseer/!svn/ver/33/content/js/algo/auto/dom.js
+END
+heuristics.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/siloseer/!svn/ver/33/content/js/algo/auto/heuristics.js
+END

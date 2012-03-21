@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type"text/css" ?>
+<!DOCTYPE page SYSTEM "chrome://siloseer_gui/locale/overlay.dtd">
+
+<page id="siloseer_View_Domain_Sidebar" onload="moreFields();updateProfile()" title="SiloSeer View Domain"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="js/firefox/Sidebar_Toggle.js"/>
+  <script src="js/xul/View_Domain.js"/>
+  <script src="js/utils/md5.js"/>
+  <script src="js/utils/common.js"/>
+
+  Welcome to Siloseer, <html:b id='boldStuff'></html:b>
+  <html:br />
+  <html:a id="userProfileLink" onclick="" href="">View User Profile</html:a>
+  <html:hr />
+
+<vbox id="readroot" style="display: none">
+  <description>Domain Url:</description>
+<description id="domainname_info"></description>
+<description>Description:</description>
+<description id="domaindesc_info"></description>
+<!-- <description id="domain_ct" hidden="true"></description> -->
+
+<hbox id="editbuttons">
+  <!-- <button id="Edit_Domain_Button" label="Edit Domain" oncommand="" disabled="false" /> -->
+  <!-- <button id="Edit_Domain_View_Data_Button" label="View Data" oncommand="" disabled="false" /> -->
+  <button id="Edit_Config__Data_Button" label="Edit Wrapper" oncommand="" disabled="false" />
+</hbox>
+<hbox id="managebuttons">
+  <!-- <button id="Edit_Domain_Crawl_Button" label="Crawl" oncommand="" disabled="false" /> -->
+  <button type="menu" label="Crawl" id="Edit_Domain_Crawl_Button"  oncommand="" disabled="false">
+    <menupopup>
+        <menuitem label="Local" oncommand="alert('Coming soon!')"/>
+        <menuitem label="In The Cloud"/>
+    </menupopup>
+  </button>
+
+  <!-- <button id="Edit_Domain_Delete_Button" label="Delete" oncommand="" disabled="false" /> -->
+</hbox>
+</vbox>
+
+<hbox id="writeroot"></hbox>
+
+<hbox id="View_Domain_End_Options" hidden="false">
+  <button id="View_Domain_Back_Button" label="Back" oncommand="display_View_Main_Sidebar();" disabled="false" />
+</hbox>
+
+</page>
